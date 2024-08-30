@@ -573,6 +573,7 @@ func (s *Select[T]) optionsView() string {
 	for i, option := range s.filteredOptions {
 
     if option.Key == "" {
+      s.selected++
       continue
     }
 
