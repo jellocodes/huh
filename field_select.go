@@ -571,6 +571,11 @@ func (s *Select[T]) optionsView() string {
 	}
 
 	for i, option := range s.filteredOptions {
+
+    if option.Key == "" {
+      continue
+    }
+
 		if s.selected == i {
 			sb.WriteString(c + styles.SelectedOption.Render(option.Key))
 		} else {
